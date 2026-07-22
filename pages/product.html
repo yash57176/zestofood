@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tomato - Zesto</title>
+    
+    <!-- CSS imports -->
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/product.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <main class="product-detail-wrapper">
+            
+            <!-- Sticky Navbar -->
+            <header class="product-header">
+                <button class="icon-btn" id="backBtn" aria-label="Go back">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <button class="icon-btn" id="wishlistBtn" aria-label="Add to wishlist">
+                    <span class="material-symbols-outlined">favorite</span>
+                </button>
+            </header>
+
+            <!-- Scrollable Body -->
+            <div class="product-content">
+                
+                <!-- Large Image Area -->
+                <div class="product-hero-image">
+                    🍅
+                </div>
+
+                <!-- Product Details Area -->
+                <div class="product-info-container">
+                    
+                    <div class="product-header-info">
+                        <h1 class="product-name">Tomato</h1>
+                        <span class="product-price-tag" id="priceDisplay">₹49/kg</span>
+                    </div>
+
+                    <!-- 5 Star Rating -->
+                    <div class="rating-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="rating-count">(4.8 / 120 reviews)</span>
+                    </div>
+
+                    <!-- Description -->
+                    <h3 class="description-title">Description</h3>
+                    <p class="description-text">
+                        Fresh, organically grown red tomatoes sourced directly from local Indian farms. Rich in Lycopene and Vitamin C. Perfect for curries, salads, and everyday cooking.
+                    </p>
+
+                    <!-- Quantity Adjuster -->
+                    <div class="quantity-section">
+                        <span class="quantity-label">Quantity</span>
+                        <div class="quantity-control">
+                            <button class="qty-btn" id="qtyMinus">-</button>
+                            <span class="qty-number" id="qtyValue">1</span>
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bottom Sticky Action Bar -->
+            <div class="bottom-action-bar">
+                <button class="add-cart-btn" id="addToCartBtn">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    Add to Cart
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- JS script -->
+    <script src="../scripts/product.js"></script>
+</body>
+</html>
