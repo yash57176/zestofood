@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zesto - Instant Grocery App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- ==========================================
+             1. SPLASH SCREEN
+             ========================================== -->
+        <div id="splashScreen" class="page-screen active">
+            <main class="splash-wrapper">
+                <div class="splash-logo-container">
+                    <h1 class="brand-name">Zesto</h1>
+                    <p class="brand-tagline">Groceries in 10 minutes</p>
+                </div>
+            </main>
+        </div>
+
+        <!-- ==========================================
+             2. LOGIN SCREEN
+             ========================================== -->
+        <div id="loginScreen" class="page-screen">
+            <main class="login-wrapper">
+                <div class="brand-section">
+                    <h1 class="login-brand-name">Zesto</h1>
+                    <p class="login-subtitle">India's Last Minute App</p>
+                </div>
+                <div class="login-form-container">
+                    <label class="form-title">Enter Mobile Number</label>
+                    <div class="phone-input-group">
+                        <span class="country-code">+91</span>
+                        <input type="tel" id="mobileInput" class="phone-input" placeholder="Continue with phone number" maxlength="10">
+                    </div>
+                    <button class="continue-btn" id="loginContinueBtn">Continue</button>
+                </div>
+                <footer class="login-footer">
+                    <p>By continuing, you agree to our Terms of Service & Privacy Policy</p>
+                </footer>
+            </main>
+        </div>
+
+        <!-- ==========================================
+             3. HOME SCREEN
+             ========================================== -->
+        <div id="homeScreen" class="page-screen">
+            <main class="home-wrapper">
+                <header class="home-header">
+                    <div class="location-bar">
+                        <span class="material-symbols-outlined" style="color: var(--primary-green);">location_on</span>
+                        <span>Sadabad, Uttar Pradesh</span>
+                    </div>
+                    <div class="search-bar-trigger" onclick="navigateTo('searchScreen')">
+                        <span class="material-symbols-outlined">search</span>
+                        <span>Search "milk", "tomato", "chips"...</span>
+                    </div>
+                </header>
+
+                <div class="home-content">
+                    <div class="banner-slider">
+                        <h2 style="font-size:18px;">Fresh Vegetables</h2>
+                        <p style="font-size:12px; margin-top:4px;">Up to 30% OFF today</p>
+                    </div>
+
+                    <section>
+                        <h3 class="section-head-title">Categories</h3>
+                        <div class="categories-grid">
+                            <div class="category-card"><span class="category-icon">🥦</span>Vegetables</div>
+                            <div class="category-card"><span class="category-icon">🍎</span>Fruits</div>
+                            <div class="category-card"><span class="category-icon">🥛</span>Dairy & Milk</div>
+                            <div class="category-card"><span class="category-icon">🥤</span>Beverages</div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="section-head-title">Trending Items</h3>
+                        <div class="products-grid">
+                            <div class="product-card">
+                                <div>
+                                    <div class="product-img">🍅</div>
+                                    <div class="product-title">Fresh Tomato</div>
+                                    <div class="product-weight">1 kg</div>
+                                </div>
+                                <div class="product-bottom">
+                                    <span class="product-price">₹35</span>
+                                    <button class="add-btn" onclick="navigateTo('cartScreen')">ADD</button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div>
+                                    <div class="product-img">🥛</div>
+                                    <div class="product-title">Full Cream Milk</div>
+                                    <div class="product-weight">500 ml</div>
+                                </div>
+                                <div class="product-bottom">
+                                    <span class="product-price">₹33</span>
+                                    <button class="add-btn" onclick="navigateTo('cartScreen')">ADD</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Bottom Navigation -->
+                <nav class="bottom-nav">
+                    <div class="nav-item active" onclick="navigateTo('homeScreen')"><span class="material-symbols-outlined">home</span>Home</div>
+                    <div class="nav-item" onclick="navigateTo('cartScreen')"><span class="material-symbols-outlined">shopping_cart</span>Cart</div>
+                    <div class="nav-item" onclick="navigateTo('ordersScreen')"><span class="material-symbols-outlined">package</span>Orders</div>
+                    <div class="nav-item" onclick="navigateTo('profileScreen')"><span class="material-symbols-outlined">person</span>Profile</div>
+                </nav>
+            </main>
+        </div>
+
+        <!-- ==========================================
+             4. SEARCH SCREEN
+             ========================================== -->
+        <div id="searchScreen" class="page-screen">
+            <header class="search-header">
+                <button class="back-btn" onclick="navigateTo('homeScreen')"><span class="material-symbols-outlined">arrow_back</span></button>
+                <div class="search-input-box">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Search for products..." autofocus>
+                </div>
+            </header>
+            <div class="search-content">
+                <div class="recent-title">Popular Searches</div>
+                <div class="recent-tags">
+                    <span class="tag">Milk</span>
+                    <span class="tag">Potato</span>
+                    <span class="tag">Amul Butter</span>
+                    <span class="tag">Paneer</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             5. CART SCREEN
+             ========================================== -->
+        <div id="cartScreen" class="page-screen">
+            <header class="cart-header">
+                <button class="back-btn" onclick="navigateTo('homeScreen')"><span class="material-symbols-outlined">arrow_back</span></button>
+                <h2>My Cart</h2>
+            </header>
+            <div class="cart-content">
+                <div class="cart-item">
+                    <div class="cart-item-left">
+                        <span style="font-size:24px;">🍅</span>
+                        <div>
+                            <div style="font-weight:600; font-size:14px;">Fresh Tomato</div>
+                            <div style="font-size:12px; color:var(--text-muted);">₹35 • 1 kg</div>
+                        </div>
+                    </div>
+                    <div class="qty-counter">
+                        <button class="qty-btn">-</button>
+                        <span style="padding:0 8px; font-size:13px; font-weight:600;">1</span>
+                        <button class="qty-btn">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <button class="checkout-btn" onclick="navigateTo('checkoutScreen')">
+                    <span>Proceed to Pay</span>
+                    <span>₹35 →</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             6. CHECKOUT SCREEN
+             ========================================== -->
+        <div id="checkoutScreen" class="page-screen">
+            <header class="checkout-header">
+                <button class="back-btn" onclick="navigateTo('cartScreen')"><span class="material-symbols-outlined">arrow_back</span></button>
+                <h2>Checkout</h2>
+            </header>
+            <div class="checkout-content">
+                <div class="address-card">
+                    <div style="font-size:12px; font-weight:700; color:var(--primary-green);">DELIVERY ADDRESS</div>
+                    <div style="font-size:14px; font-weight:600; margin-top:4px;">Sadabad, Uttar Pradesh</div>
+                </div>
+
+                <div>
+                    <div style="font-size:14px; font-weight:600; margin-bottom:8px;">Select Payment Method</div>
+                    <div class="payment-option selected">
+                        <span>UPI (Google Pay / PhonePe)</span>
+                        <span>●</span>
+                    </div>
+                    <div class="payment-option">
+                        <span>Cash on Delivery (COD)</span>
+                        <span>○</span>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-row"><span>Item Total</span><span>₹35</span></div>
+                    <div class="summary-row"><span>Delivery Fee</span><span>₹15</span></div>
+                    <div class="summary-row total"><span>To Pay</span><span>₹50</span></div>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <button class="checkout-btn" onclick="navigateTo('ordersScreen')" style="justify-content:center;">Place Order • ₹50</button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             7. ORDERS SCREEN
+             ========================================== -->
+        <div id="ordersScreen" class="page-screen">
+            <header class="cart-header">
+                <button class="back-btn" onclick="navigateTo('homeScreen')"><span class="material-symbols-outlined">arrow_back</span></button>
+                <h2>My Orders</h2>
+            </header>
+            <div class="cart-content">
+                <div class="order-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <span style="font-weight:700;">Order #1254</span>
+                        <span class="status-badge">Delivered</span>
+                    </div>
+                    <div style="font-size:13px; color:var(--text-muted);">1x Fresh Tomato • ₹35</div>
+                </div>
+            </div>
+            <nav class="bottom-nav">
+                <div class="nav-item" onclick="navigateTo('homeScreen')"><span class="material-symbols-outlined">home</span>Home</div>
+                <div class="nav-item" onclick="navigateTo('cartScreen')"><span class="material-symbols-outlined">shopping_cart</span>Cart</div>
+                <div class="nav-item active" onclick="navigateTo('ordersScreen')"><span class="material-symbols-outlined">package</span>Orders</div>
+                <div class="nav-item" onclick="navigateTo('profileScreen')"><span class="material-symbols-outlined">person</span>Profile</div>
+            </nav>
+        </div>
+
+        <!-- ==========================================
+             8. PROFILE SCREEN
+             ========================================== -->
+        <div id="profileScreen" class="page-screen">
+            <header class="cart-header">
+                <button class="back-btn" onclick="navigateTo('homeScreen')"><span class="material-symbols-outlined">arrow_back</span></button>
+                <h2>My Profile</h2>
+            </header>
+            <div class="cart-content">
+                <div class="user-card">
+                    <div class="avatar"><span class="material-symbols-outlined">person</span></div>
+                    <div>
+                        <div style="font-weight:700;">Zesto User</div>
+                        <div style="font-size:12px; color:var(--text-muted);">+91 98765 43210</div>
+                    </div>
+                </div>
+
+                <div class="menu-section">
+                    <div class="menu-item" onclick="navigateTo('ordersScreen')"><span>Your Orders</span><span>›</span></div>
+                    <div class="menu-item"><span>Address Book</span><span>›</span></div>
+                    <div class="menu-item"><span>Help & Support</span><span>›</span></div>
+                </div>
+
+                <button class="logout-btn" onclick="navigateTo('loginScreen')">Log Out</button>
+            </div>
+            <nav class="bottom-nav">
+                <div class="nav-item" onclick="navigateTo('homeScreen')"><span class="material-symbols-outlined">home</span>Home</div>
+                <div class="nav-item" onclick="navigateTo('cartScreen')"><span class="material-symbols-outlined">shopping_cart</span>Cart</div>
+                <div class="nav-item" onclick="navigateTo('ordersScreen')"><span class="material-symbols-outlined">package</span>Orders</div>
+                <div class="nav-item active" onclick="navigateTo('profileScreen')"><span class="material-symbols-outlined">person</span>Profile</div>
+            </nav>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
